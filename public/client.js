@@ -2,20 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchBox = document.getElementById("searchBox");
     const matches = document.getElementById("matches");
 
-    // Fetch the list of countries and capitals
+    let countriesData = [];
     fetch("countriesData.json")
         .then(response => response.json())
         .then(data => {
-            let countries = data.map(item => item.name.toLowerCase());
+            countriesData = data;
 
-            // Event listener for input
             searchBox.addEventListener("input", function () {
                 let inputText = this.value.toLowerCase();
                 let suggestions = [];
 
                 if (inputText.length > 0) {
-                    suggestions = countries.filter(country =>
-                        country.includes(inputText)
+                    suggestions = countriesData.filter(country =>
+                        country.name.toLowerCase().includes(inputText) || country.capital.toLowerCase().includes(inputText)
                     );
                 }
 
@@ -26,11 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error fetching data:", error);
         });
 
-    // Function to display autocomplete suggestions
     function displayMatches(suggestions) {
         if (suggestions.length > 0) {
             const html = suggestions
-                .map(suggestion => `<li>${suggestion}</li>`)
+                .map(suggestion => `<li>${suggestion.name} - ${suggestion.capital}</li>`)
                 .join("");
             matches.innerHTML = html;
             matches.style.display = "block";
@@ -40,16 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Event listener for selecting a suggestion
     matches.addEventListener("click", function (e) {
         if (e.target.tagName === "LI") {
-            searchBox.value = e.target.textContent;
+            searchBox.value = e.target.textContent.split(" - ")[0];
             matches.innerHTML = "";
             matches.style.display = "none";
         }
     });
 
-    // Close the suggestions when clicking outside the input
     document.addEventListener("click", function (e) {
         if (e.target !== searchBox && e.target !== matches) {
             matches.innerHTML = "";

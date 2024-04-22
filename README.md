@@ -23,8 +23,8 @@ To run the application locally, follow these steps:
 - Click on a suggestion to select it and populate the input box with the selected country.
 
 ## Screenshots
-![Autocomplete Form](image-1.png)
-![Autocomplete List Based on Text](image.png)
+![Autocomplete Form](image.png)
+![Autocomplete List Based on Text](image-1.png)
 
 
 

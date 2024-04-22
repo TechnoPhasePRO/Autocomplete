@@ -2,12 +2,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0fff0;
 }
 
 .input-container {
     position: relative;
-    width: 500px; /* Adjust width as needed */
+    width: 500px;
     margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"] {
@@ -17,6 +22,7 @@ input[type="text"] {
     border: 1px solid #dfe1e5;
     border-radius: 24px;
     outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 ul {
@@ -24,15 +30,15 @@ ul {
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 50px; /* Adjust top position to align dropdown with input */
-    width: calc(100% - 30px); /* Adjust width to match input */
+    top: 50px;
+    width: calc(100% - 30px);
     background-color: #fff;
     border: 1px solid #dfe1e5;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     display: none;
-    max-height: 200px; /* Adjust maximum height as needed */
+    max-height: 200px;
     overflow-y: auto;
 }
 
