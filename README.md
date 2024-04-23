@@ -6,13 +6,13 @@ This is a simple autocomplete application built using HTML, CSS, and JavaScript.
 
 To run the application locally, follow these steps:
 
-1. Clone this repository to your local machine: git clone https://github.com/TechnoPhasePRO/Autocomplete.git
+1. Clone this repository to your local machine: `git clone https://github.com/TechnoPhasePRO/Autocomplete.git`.
 
-2. Navigate to the project directory: cd autocomplete
+2. Navigate to the project directory.
 
-3. Install dependencies: npm install
+3. Install dependencies: `npm install`.
 
-4. Start the server: node server.js
+4. Start the server: `node server.js`.
 
 
 5. Open your web browser and go to `http://localhost:3000` to view the application.
